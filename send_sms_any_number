@@ -1,0 +1,18 @@
+from twilio.rest import Client
+
+
+account_sid = 'apki twilio id yaha paste karo'
+auth_token = 'auth number yaha paste karo'
+
+
+client = Client(account_sid, auth_token)
+
+
+message = client.messages.create(
+    body="Namaste! Ye ek test SMS hai Python se bheja gaya.", 
+    from_='twilio number dalo yha',  
+    to='+91 jisko massage bhejna hai'   
+)
+
+print("Message ID:", message.sid)
+print("SMS successfully bheja gaya!")
